@@ -7,7 +7,7 @@ eureka:
   client:
     region: default
     serviceUrl:
-      defaultZone: http://user:user@localhost:8761/eureka
+      defaultZone: http://user:user@10.100.101.228:8761/eureka
     register-with-eureka: true
     fetch-registry: true
     healthcheck:
