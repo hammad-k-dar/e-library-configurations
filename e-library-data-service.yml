@@ -1,13 +1,20 @@
+#mongo-url: mongodb://10.100.101.228:27017/e-library
+mongo-url: mongodb://e-library-mongodb:27017/e-library
+
+#eureka-server-url: http://user:user@localhost:8761/eureka
+eureka-server-url: http://user:user@e-library-registry-service:8761/eureka
+#------------------------------------
+
 spring:
   data:
     mongodb:
-      uri: mongodb://bpm-tpg-228:27017/e-library
+      uri: ${mongo-url}
 
 eureka:
   client:
     region: default
     service-url:
-      defaultZone: http://user:user@10.100.101.228:8761/eureka
+      defaultZone: ${eureka-server-url}
     register-with-eureka: true
     fetch-registry: true
     healthcheck:
@@ -27,4 +34,4 @@ logging:
   level:
     com.hkd: DEBUG
 
-message: Hello HKD from the GitHub
+message: Hello HKD from Github application.yml

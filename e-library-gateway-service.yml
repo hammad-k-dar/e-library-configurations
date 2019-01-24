@@ -1,3 +1,7 @@
+#eureka-server-url: http://user:user@localhost:8761/eureka
+eureka-server-url: http://user:user@e-library-registry-service:8761/eureka
+#---------------------------
+
 spring:
   application:
     name: e-library-gateway-service
@@ -19,13 +23,15 @@ zuul:
 eureka:
   client:
     region: default
-    serviceUrl:
-      defaultZone: http://user:user@localhost:8761/eureka
+    service-url:
+      defaultZone: ${eureka-server-url}
     register-with-eureka: true
     fetch-registry: true
+    healthcheck:
+      enabled: true
   instance:
-    #    leaseRenewalIntervalInSeconds: 1
-    #    leaseExpirationDurationInSeconds: 2
+    leaseRenewalIntervalInSeconds: 60
+    leaseExpirationDurationInSeconds: 120
     prefer-ip-address: true
 
   #Setting logging levels

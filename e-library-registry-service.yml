@@ -1,3 +1,7 @@
+#eureka-server-url: http://user:user@localhost:8761/eureka
+eureka-server-url: http://user:user@e-library-registry-service:8761/eureka
+#------------------------------------
+
 spring:
   application:
     name: e-library-registry-service
@@ -19,8 +23,8 @@ eureka:
     fetchRegistry: false
   environment: hkd-local
 
-serviceUrl:
-  defaultZone: http://user:user@10.100.101.228:8761/eureka
+service-url:
+  defaultZone: ${eureka-server-url}
 
 logging:
   level:

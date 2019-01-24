@@ -1,7 +1,14 @@
+#mongo-url: mongodb://10.100.101.228:27017/e-library
+mongo-url: mongodb://e-library-mongodb:27017/e-library
+
+#eureka-server-url: http://user:user@localhost:8761/eureka
+eureka-server-url: http://user:user@e-library-registry-service:8761/eureka
+#------------------------------------
+
 spring:
   data:
     mongodb:
-      uri: mongodb://bpm-tpg-228:27017/e-library
+      uri: ${mongo-url}
 
 feign:
   hystrix:
@@ -10,8 +17,8 @@ feign:
 eureka:
   client:
     region: default
-    serviceUrl:
-      defaultZone: http://user:user@10.100.101.228:8761/eureka
+    service-url:
+      defaultZone: ${eureka-server-url}
     register-with-eureka: true
     fetch-registry: true
     healthcheck:
