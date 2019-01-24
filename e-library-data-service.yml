@@ -6,7 +6,7 @@ spring:
 eureka:
   client:
     region: default
-    serviceUrl:
+    service-url:
       defaultZone: http://user:user@10.100.101.228:8761/eureka
     register-with-eureka: true
     fetch-registry: true
