@@ -20,7 +20,7 @@ eureka:
   environment: hkd-local
 
 serviceUrl:
-  defaultZone: http://user:user@localhost:8761/eureka
+  defaultZone: http://user:user@10.100.101.228:8761/eureka
 
 logging:
   level:
